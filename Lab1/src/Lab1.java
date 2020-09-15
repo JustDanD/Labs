@@ -1,5 +1,4 @@
 public class Lab1 {
-    public class Lab1 {
         public static void main(String[] args) {
             short[] d = new short[12];
             double[] x = new double[16];
@@ -33,4 +32,4 @@ public class Lab1 {
 
         }
     }
-}
+
