@@ -7,5 +7,5 @@ public class Landorus extends Pokemon {
         setStats(hp, attack, def, spatck, spdef, spd);
         setType(type);
     }
-    
+
 }
