@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/Pokemon.jar!/" />
+          <root url="jar://$MODULE_DIR$/Pokemon.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
