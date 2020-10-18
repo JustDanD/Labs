@@ -15,4 +15,8 @@ public class Slash extends PhysicalMove {
             return super.calcBaseDamage(att, def);
 
     }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Slash";
+    }
 }

@@ -16,4 +16,8 @@ public class SludgeWave extends SpecialMove {
         if (chance <= 1)
             Effect.poison(p);
     }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Sludge Wave";
+    }
 }

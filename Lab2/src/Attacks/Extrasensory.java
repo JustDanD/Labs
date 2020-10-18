@@ -16,4 +16,8 @@ public class Extrasensory extends SpecialMove {
         if (chance <= 1)
             Effect.flinch(p);
     }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Extrasensory";
+    }
 }

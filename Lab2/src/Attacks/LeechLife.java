@@ -9,12 +9,13 @@ public class LeechLife extends PhysicalMove {
 
     @Override
     protected void applySelfEffects(Pokemon p) {
-        p.setStats(p.getStat(Stat.HP) - 0.5 * (p.getStat(Stat.HP) - p.getHP()),
-                      p.getStat(Stat.ATTACK),
-                      p.getStat(Stat.DEFENSE),
-                      p.getStat(Stat.SPECIAL_ATTACK),
-                      p.getStat(Stat.SPECIAL_DEFENSE),
-                      p.getStat(Stat.SPEED));
-        p.restore();
+        int heal = (int)(-0.5 * (p.getStat(Stat.HP)  - p.getHP()));
+        p.setMod(Stat.HP, heal);
+
+    }
+
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Leech Life";
     }
 }

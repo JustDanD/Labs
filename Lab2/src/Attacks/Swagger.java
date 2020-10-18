@@ -12,4 +12,9 @@ public class Swagger extends StatusMove {
         Effect.confuse(p);
         p.setMod(Stat.ATTACK, -2);
     }
+
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Swagger";
+    }
 }

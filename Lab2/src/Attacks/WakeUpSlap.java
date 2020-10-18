@@ -14,4 +14,9 @@ public class WakeUpSlap extends PhysicalMove {
        else
            return super.calcBaseDamage(att, def);
     }
+
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Wake-Up Slap";
+    }
 }

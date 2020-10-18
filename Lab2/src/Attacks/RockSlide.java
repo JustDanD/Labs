@@ -14,4 +14,8 @@ public class RockSlide extends PhysicalMove {
         if (chance <= 3)
             Effect.flinch(p);
     }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя RockSlide";
+    }
 }

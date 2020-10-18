@@ -11,4 +11,8 @@ public class ShadowBall extends SpecialMove {
         if (chance <= 2)
             p.setMod(Stat.SPECIAL_DEFENSE, -1);
     }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Shadow Ball";
+    }
 }

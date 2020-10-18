@@ -10,8 +10,12 @@ public class Facade extends PhysicalMove {
     @Override
     protected double calcBaseDamage(Pokemon att, Pokemon def) {
         if (def.getCondition() == Status.BURN | def.getCondition() == Status.PARALYZE | def.getCondition() == Status.POISON)
-            return 2;
+            return 2 * super.calcBaseDamage(att, def);
         else
             return super.calcBaseDamage(att, def);
+    }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Facade";
     }
 }

@@ -25,21 +25,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e790e02-89d0-4ef6-b23e-1aeb252c51e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Attacks/DoubleTeam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attacks/LeechLife.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attacks/ShadowBall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attacks/Sing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attacks/Slash.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attacks/Swagger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attacks/WakeUpSlap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pokemons/Igglybuff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pokemons/Jigglypuff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pokemons/Wigglytuff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pokemons/Yanma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pokemons/Yanmega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Attacks/Extrasensory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Attacks/Facade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Attacks/RockSlide.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Attacks/SludgeWave.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/pokemons/Landorus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab2/pokemons/Yanma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/DoubleTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/DoubleTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/Extrasensory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/Extrasensory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Attacks/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/LeechLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/LeechLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/RockSlide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/RockSlide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/ShadowBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/ShadowBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/Sing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/Sing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/Slash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/Slash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/SludgeWave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/SludgeWave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/Swagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/Swagger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Attacks/WakeUpSlap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Attacks/WakeUpSlap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pokemons/Yanma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pokemons/Yanma.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,14 +74,26 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lab/lab.iml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pokemon.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Labs\Lab2\src\Project" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Lab2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.Main" />
       <module name="Lab2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -114,7 +134,9 @@
       <workItem from="1602592775902" duration="509000" />
       <workItem from="1602602615710" duration="1712000" />
       <workItem from="1602687000257" duration="926000" />
-      <workItem from="1602942937299" duration="11750000" />
+      <workItem from="1602942937299" duration="12102000" />
+      <workItem from="1602957630575" duration="19000" />
+      <workItem from="1603011982944" duration="8563000" />
     </task>
     <task id="LOCAL-00001" summary="Landorus with his attacks finished">
       <created>1602949142939</created>
@@ -130,7 +152,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602949148269</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="All Pokemons finished&#10;Debug Stage started">
+      <created>1602957082729</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602957082729</updated>
+    </task>
+    <task id="LOCAL-00004" summary="All Pokemons finished&#10;Debug Stage started">
+      <created>1602957094646</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602957094646</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,60 +186,115 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Landorus with his attacks finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Landorus with his attacks finished" />
+    <MESSAGE value="All Pokemons finished&#10;Debug Stage started" />
+    <option name="LAST_COMMIT_MESSAGE" value="All Pokemons finished&#10;Debug Stage started" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="476" height="466" key="DebuggerActiveHint" timestamp="1602590429213">
+    <state x="790" y="230" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1603021344086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="476" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602590429213" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1602590174227">
+    <state x="790" y="230" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021344086" />
+    <state x="863" y="273" key="#xdebugger.XInspectDialog" timestamp="1603018646561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602590174227" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1602950639282">
+    <state x="863" y="273" key="#xdebugger.XInspectDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603018646561" />
+    <state width="476" height="466" key="DebuggerActiveHint" timestamp="1603016537172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639282" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1602950639282">
+    <state width="476" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603016537172" />
+    <state x="757" y="415" key="DetectedRootsChooserDialog" timestamp="1603021272619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639282" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1602950639282">
+    <state x="757" y="415" key="DetectedRootsChooserDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021272619" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1603021351092">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639282" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1602950639282">
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021351092" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1603021067971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639282" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602950639283">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1603021067971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639283" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602950639282">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1603021067970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639282" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602950639282">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067970" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1603021067971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639282" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602950639283">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1603021067971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950639283" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1601723254605">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1603021067971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601723254605" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602949205557">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1603021067971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602949205557" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1603021067971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021067971" />
+    <state x="652" y="222" key="RollbackChangesDialog" timestamp="1603021192995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="652" y="222" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021192995" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1603021355856">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021355856" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602957110422">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602957110422" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603021356291">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603021356291" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602950211106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602950211106" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/project/Attacks/Facade.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/project/Attacks/Extrasensory.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/project/Attacks/SludgeWave.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="p5.getHP()" language="JAVA" />
+        <watch expression="p.getStat(Stat.HP)" language="JAVA" />
+        <watch expression="heal " language="JAVA" custom="java.util.Collections" />
+        <watch expression="p5.getStat(Stat.HP)" language="JAVA" />
+        <watch expression="p.getHP()" language="JAVA" />
+        <watch expression="var2.getHP()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lab2$Main.ic" NAME="Main Coverage Results" MODIFIED="1603016786119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

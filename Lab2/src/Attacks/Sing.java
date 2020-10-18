@@ -14,4 +14,8 @@ public class Sing extends StatusMove {
     protected void applyOppEffects(Pokemon p) {
         Effect.sleep(p);
     }
+    @Override
+    protected String describe() {
+        return super.describe() + " используя Sing";
+    }
 }
