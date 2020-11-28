@@ -7,9 +7,9 @@ public class Main {
         System.out.print(a.testM());
         System.out.print(a.testM2());
         a = null;
-       // System.out.print(a.test);
-        //System.out.print(a.testM());
         System.out.print(a.testM2());
+        System.out.print(a.test);
+        System.out.print(a.testM());
     }
 
 }
