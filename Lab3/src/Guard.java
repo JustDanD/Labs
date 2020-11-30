@@ -6,12 +6,24 @@ public class Guard extends Human {
         this.mood = mood;
     }
 
-    boolean giveAccess(int crowdSize) {
-        double checker = (100 - crowdSize) * mood.getCof();
-        if (checker  < 80)
-            return false;
+    boolean giveAccess(final int crowdSize) {
+        class brain {
+            double checker = 0;
+            void countChecker() {
+                checker = (100 - crowdSize) * mood.getCof();
+            }
+        }
+        brain mind = new brain();
+        mind.countChecker();
+        if (crowdSize >= 0) {
+            if (mind.checker < 80)
+                return false;
+            else
+                return true;
+        }
         else
-            return true;
+            throw new WrongParamExp("Количество людей отрицательно!!!");
+
     }
     @Override
     public int hashCode () {

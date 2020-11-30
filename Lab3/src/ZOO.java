@@ -6,6 +6,7 @@ public class ZOO {
     Crowd crowd;
     IScoopFamily Scoop;
 
+
     public ZOO() {
         this.animalAreas = new ArrayList<AnimalArea>();
         this.animalAreas.add(new Pond());
@@ -21,12 +22,62 @@ public class ZOO {
             this.guard = new Guard("Валера", Mood.GOOD);
         else
             this.guard = new Guard("Валера", Mood.BEST);
-        this.crowd = new Crowd((int)(Math.random() * 30));
+        this.crowd = new Crowd((int)(Math.random() * 30 - 5));
 
         Scoop = new IScoopFamily() {
             String name = "Scooperfield";
             AnimalArea curArea;
-            Bread bread = new Bread(Math.random() * 150);
+
+            class Bread {
+                private double size, cursize, instance = 100;
+
+                public Bread(double size) {
+                    this.instance = 100;
+                    this.size = size;
+                    this.cursize = size;
+                }
+
+                void use(double step, Animals type) throws WrongStepExp {
+                    switch (type) {
+                        case DUCK:
+                            if (step <= 0.6 * size) {
+                                while (instance > 50) {
+                                    cursize = cursize - step;
+                                    instance = cursize / size * 100;
+                                    System.out.println("Скуперфильд крошит булку");
+                                }
+                                return;
+                            }
+                            else
+                                throw new WrongStepExp("Шаг больше половины булки.");
+                        case BEAR:
+                            while (instance > 0) {
+                                cursize = cursize - step;
+                                instance = cursize / size * 100;
+                                System.out.println("Скуперфильд крошит булку");
+                            }
+                            return;
+                    }
+                }
+                @Override
+                public int hashCode () {
+                    return super.hashCode() + 25;
+                }
+                @Override
+                public String toString() {
+                    return "Cur bread size:" + this.size + "; cursize:" + this.cursize + "instance:" + this.instance;
+                }
+                @Override
+                public boolean equals( Object o) {
+                    if (o instanceof Bread) {
+                        if (this.hashCode() == ((Bread)o).hashCode() && (this.toString() == ((Bread)o).toString()))
+                            return true;
+                    }
+                    return false;
+                }
+            }
+
+            Bread bread = new Bread(Math.random() * 20);
 
             @Override
             public void setCurArea( AnimalArea newArea) {
@@ -36,9 +87,13 @@ public class ZOO {
             @Override
             public void feedAnimals() {
                 if (curArea instanceof IFeedable) {
-                    System.out.println("Скуперфильд крошит булку");
-                    ((IFeedable) curArea).eat();
-                    bread.use(Math.random() * 5, curArea.animalType);
+                    try {
+                        bread.use(Math.random() * 5, curArea.animalType);
+                        ((IFeedable) curArea).eat();
+                    } catch(WrongStepExp e) {
+                        System.out.println(e.getMessage());
+                    }
+
                 }
                 else
                     System.out.println("Здравый смысл подсказывает: Животных  нельзя кормить!!!!");
