@@ -8,7 +8,7 @@ public class ZOO {
 
 
     public ZOO() {
-        this.animalAreas = new ArrayList<AnimalArea>();
+        this.animalAreas = new ArrayList<>();
         this.animalAreas.add(new Pond());
         this.animalAreas.add(new Glade());
         double moodcoef = Math.random();
@@ -50,8 +50,8 @@ public class ZOO {
 
                 @Override
                 public int hashCode () {
-                    int h = (int)(31 * size - 25 * cursize + 43 * instance);
-                    return h;
+                    return  (int)(31 * size - 25 * cursize + 43 * instance);
+
                 }
                 @Override
                 public String toString() {
@@ -60,8 +60,7 @@ public class ZOO {
                 @Override
                 public boolean equals( Object o) {
                     if (o instanceof Bread) {
-                        if (this.hashCode() == ((Bread)o).hashCode() && (this.toString() == ((Bread)o).toString()))
-                            return true;
+                        return this.hashCode() == ((Bread) o).hashCode() && (this.toString() == ((Bread) o).toString());
                     }
                     return false;
                 }
@@ -113,7 +112,7 @@ public class ZOO {
             public boolean askAccess() {
                 if (curArea instanceof IInteractive) {
                     System.out.println("Скуперфильд: Можно погладить?");
-                    if (guard.giveAccess(crowd.getPeopleAmount()) == true) {
+                    if (guard.giveAccess(crowd.getPeopleAmount())) {
                         System.out.println(guard.name + ":Да, только аккуратно и тихо.");
                         System.out.println("Скуперфильд: Спасибо!!");
                         return true;
@@ -136,8 +135,7 @@ public class ZOO {
             @Override
             public boolean equals( Object o) {
                 if (o instanceof IScoopFamily) {
-                    if (this.hashCode() == ((IScoopFamily)o).hashCode() && (this.toString() == ((IScoopFamily)o).toString()))
-                        return true;
+                    return this.hashCode() == ((IScoopFamily) o).hashCode() && (this.toString() == ((IScoopFamily) o).toString());
                 }
                 return false;
             }
@@ -150,7 +148,7 @@ public class ZOO {
         while(i < animalAreas.size()) {
             Scoop.setCurArea(animalAreas.get(i));
             Scoop.feedAnimals();
-            if (Scoop.askAccess() == true) {
+            if (Scoop.askAccess()) {
                 Scoop.strokeAnimal();
                 Scoop.kissAnimal();
             }
@@ -169,8 +167,7 @@ public class ZOO {
     @Override
     public boolean equals( Object o) {
         if (o instanceof ZOO) {
-            if (this.hashCode() == ((ZOO)o).hashCode() && (this.toString() == ((ZOO)o).toString()))
-                return true;
+            return this.hashCode() == ((ZOO) o).hashCode() && (this.toString() == ((ZOO) o).toString());
         }
         return false;
     }
