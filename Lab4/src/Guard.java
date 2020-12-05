@@ -27,7 +27,7 @@ public class Guard extends Human {
     }
     @Override
     public int hashCode () {
-        return super.hashCode() + 25;
+        return this.mood.hashCode() + super.name.hashCode();
     }
     @Override
     public String toString() {

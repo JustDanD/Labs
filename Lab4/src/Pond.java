@@ -8,12 +8,22 @@ public class Pond extends AnimalArea implements IFeedable {
     }
 
     @Override
-    public void eat() {
-        System.out.println("*Утки едят*");
+    public void eat(double step,  IBread food) throws WrongStepExp {
+
+        if (step <= 0.6 * food.getSize()) {
+            while (food.getInstance() > 50) {
+                System.out.println("*Утки едят*");
+                food.beBitten(step);
+            }
+            return;
+        }
+        else
+            throw new WrongStepExp("Шаг больше половины булки.");
+
     }
     @Override
     public int hashCode () {
-        return super.hashCode() + 25;
+        return super.animalType.hashCode();
     }
     @Override
     public String toString() {

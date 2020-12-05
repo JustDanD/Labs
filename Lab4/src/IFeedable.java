@@ -1,3 +1,3 @@
 public interface IFeedable {
-    void eat();
+     void eat(double step,  IBread food) throws WrongStepExp;
 }

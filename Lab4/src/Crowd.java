@@ -11,7 +11,7 @@ public class Crowd {
     }
     @Override
     public int hashCode () {
-        return super.hashCode() + 25;
+        return peopleAmount  * 171;
     }
     @Override
     public String toString() {
@@ -26,3 +26,4 @@ public class Crowd {
         return false;
     }
 }
+

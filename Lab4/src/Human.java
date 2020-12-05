@@ -5,7 +5,7 @@ public class Human {
     }
     @Override
     public int hashCode () {
-        return super.hashCode() + 25;
+        return this.name.hashCode();
     }
     @Override
     public String toString() {

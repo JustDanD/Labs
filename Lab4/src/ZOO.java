@@ -28,8 +28,8 @@ public class ZOO {
             String name = "Scooperfield";
             AnimalArea curArea;
 
-            class Bread {
-                private double size, cursize, instance = 100;
+            class Bread implements IBread {
+                private double size, cursize, instance;
 
                 public Bread(double size) {
                     this.instance = 100;
@@ -37,31 +37,21 @@ public class ZOO {
                     this.cursize = size;
                 }
 
-                void use(double step, Animals type) throws WrongStepExp {
-                    switch (type) {
-                        case DUCK:
-                            if (step <= 0.6 * size) {
-                                while (instance > 50) {
-                                    cursize = cursize - step;
-                                    instance = cursize / size * 100;
-                                    System.out.println("Скуперфильд крошит булку");
-                                }
-                                return;
-                            }
-                            else
-                                throw new WrongStepExp("Шаг больше половины булки.");
-                        case BEAR:
-                            while (instance > 0) {
-                                cursize = cursize - step;
-                                instance = cursize / size * 100;
-                                System.out.println("Скуперфильд крошит булку");
-                            }
-                            return;
-                    }
+                public double getInstance() {
+                    return this.instance;
                 }
+                public double getSize() {
+                    return this.size;
+                }
+                public void beBitten(double step) {
+                    cursize = cursize - step;
+                    instance = cursize / size * 100;
+                }
+
                 @Override
                 public int hashCode () {
-                    return super.hashCode() + 25;
+                    int h = (int)(31 * size - 25 * cursize + 43 * instance);
+                    return h;
                 }
                 @Override
                 public String toString() {
@@ -88,8 +78,8 @@ public class ZOO {
             public void feedAnimals() {
                 if (curArea instanceof IFeedable) {
                     try {
-                        bread.use(Math.random() * 5, curArea.animalType);
-                        ((IFeedable) curArea).eat();
+                        System.out.println("Скуперфильд крошит булку");
+                        ((IFeedable) curArea).eat(Math.random() * 5, bread);
                     } catch(WrongStepExp e) {
                         System.out.println(e.getMessage());
                     }
@@ -137,11 +127,11 @@ public class ZOO {
                 return false;
             }
             public int hashCode () {
-                return super.hashCode() + 25;
+                return this.bread.hashCode() + this.curArea.hashCode() + this.name.hashCode();
             }
             @Override
             public String toString() {
-                return "Cur name:" + this.name + " animal area:" + this.curArea + "bread:" + this.bread.toString();
+                return "Cur name:" + this.name + " animal area:" + this.toString() + "bread:" + this.bread.toString();
             }
             @Override
             public boolean equals( Object o) {
@@ -170,7 +160,7 @@ public class ZOO {
     }
     @Override
     public int hashCode () {
-        return super.hashCode() + 25;
+        return animalAreas.hashCode() + guard.hashCode() + crowd.hashCode() + Scoop.hashCode();
     }
     @Override
     public String toString() {

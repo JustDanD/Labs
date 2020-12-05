@@ -7,9 +7,13 @@ public class Glade extends AnimalArea implements IFeedable, IInteractive {
         System.out.println("В данном вальере находятся медвежата");
     }
 
+
     @Override
-    public void eat() {
-        System.out.println("*Медвежата едят*");
+    public void eat(double step, IBread food) {
+        while (food.getInstance() > 0) {
+            System.out.println("*Мишки едят*");
+            food.beBitten(step);
+        }
     }
 
     @Override
@@ -23,7 +27,7 @@ public class Glade extends AnimalArea implements IFeedable, IInteractive {
     }
     @Override
     public int hashCode () {
-        return super.hashCode() + 25;
+        return super.animalType.hashCode();
     }
     @Override
     public String toString() {
