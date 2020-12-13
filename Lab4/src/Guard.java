@@ -6,7 +6,7 @@ public class Guard extends Human {
         this.mood = mood;
     }
 
-    boolean giveAccess(final int crowdSize) {
+    public boolean giveAccess(final int crowdSize) {
         class brain {
             double checker = 0;
             void countChecker() {
@@ -23,6 +23,10 @@ public class Guard extends Human {
         }
         else
             throw new WrongParamExp("Количество людей отрицательно!!!");
+
+    }
+
+    public void callThePolice(){
 
     }
     @Override

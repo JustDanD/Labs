@@ -4,4 +4,7 @@ public interface IScoopFamily {
     public void strokeAnimal();
     public void kissAnimal();
     public boolean askAccess();
+    public boolean getIsArmed();
+    public boolean getIsProtected();
+    public void  setIsProtected( boolean inst );
 }

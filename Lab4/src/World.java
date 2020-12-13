@@ -1,13 +1,38 @@
+import sun.nio.cs.Surrogate;
+
 import java.util.ArrayList;
 
-public class ZOO {
+public class World {
     ArrayList<AnimalArea> animalAreas;
     Guard guard;
     Crowd crowd;
     IScoopFamily Scoop;
+    private static int maxVisiters = 30;
+    FSBGroup fsbGroup;
+    boolean karlsonIsAlive = true;
 
+    public static class Plan {
+        private int id;
+        ArrayList<String> availableAnimalTypes = new ArrayList<>();
 
-    public ZOO() {
+        public Plan( int id) {
+            this.id = id;
+            availableAnimalTypes.add("Ducks");
+            availableAnimalTypes.add("Bears");
+        }
+            public ArrayList<String> getAvailableAnimalTypes() {
+                return availableAnimalTypes;
+            }
+
+        public int getMaxVisiters() {
+            return maxVisiters;
+        }
+
+        public int getId() {
+            return id;
+        }
+    }
+    public World() {
         this.animalAreas = new ArrayList<>();
         this.animalAreas.add(new Pond());
         this.animalAreas.add(new Glade());
@@ -22,12 +47,13 @@ public class ZOO {
             this.guard = new Guard("Валера", Mood.GOOD);
         else
             this.guard = new Guard("Валера", Mood.BEST);
-        this.crowd = new Crowd((int)(Math.random() * 30 - 5));
+        this.crowd = new Crowd((int)(Math.random() * maxVisiters - 5));
+
 
         Scoop = new IScoopFamily() {
-            String name = "Scooperfield";
-            AnimalArea curArea;
-
+            private String name = "Scooperfield";
+            private AnimalArea curArea;
+            private boolean isArmed = Math.random() > 0.4 ? true : false, isProtected;
             class Bread implements IBread {
                 private double size, cursize, instance;
 
@@ -65,9 +91,16 @@ public class ZOO {
                     return false;
                 }
             }
-
             Bread bread = new Bread(Math.random() * 20);
-
+            public boolean getIsArmed() {
+                return isArmed;
+            }
+            public boolean getIsProtected() {
+                return isProtected;
+            }
+            public void setIsProtected( boolean inst) {
+                this.isProtected = inst;
+            }
             @Override
             public void setCurArea( AnimalArea newArea) {
                 this.curArea = newArea;
@@ -140,12 +173,17 @@ public class ZOO {
                 return false;
             }
         };
+        if (karlsonIsAlive) {
+            Scoop.setIsProtected(false);
+            fsbGroup = null;
+        }
     }
 
     public void startAction() {
         int i = 0;
-        System.out.println("*Скуперфильд приходит*");
-        while(i < animalAreas.size()) {
+        System.out.println("*Скуперфильд приходит в зоопарк*");
+        if (karlsonIsAlive) {
+            while(i < animalAreas.size()) {
             Scoop.setCurArea(animalAreas.get(i));
             Scoop.feedAnimals();
             if (Scoop.askAccess()) {
@@ -155,6 +193,7 @@ public class ZOO {
             i++;
         }
         System.out.println("*Скуперфильд  уходит*");
+        }
     }
     @Override
     public int hashCode () {
@@ -166,8 +205,8 @@ public class ZOO {
     }
     @Override
     public boolean equals( Object o) {
-        if (o instanceof ZOO) {
-            return this.hashCode() == ((ZOO) o).hashCode() && (this.toString() == ((ZOO) o).toString());
+        if (o instanceof World) {
+            return this.hashCode() == ((World) o).hashCode() && (this.toString() == ((World) o).toString());
         }
         return false;
     }
