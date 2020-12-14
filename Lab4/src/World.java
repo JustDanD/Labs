@@ -1,4 +1,6 @@
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class World {
@@ -8,11 +10,10 @@ public class World {
     IScoopFamily Scoop;
     private static int maxVisiters = 30;
     FSBGroup fsbGroup;
-    boolean karlsonIsAlive = true;
-    boolean gangIsAlive = true;
-    boolean isKnown = true;
-    String gangName = "Афоня";
-    String killedBy = "";
+    boolean karlsonIsAlive;
+    boolean gangIsAlive;
+    boolean isKnown;
+    String gangName;
     Police pd = Police.createPD();
     Jail jail = new Jail();
 
@@ -39,6 +40,21 @@ public class World {
         }
     }
     public World() {
+        Map<String, String> map;
+        try (Input inp = new Input("")) {
+            map = inp.read();
+            karlsonIsAlive = !Boolean.parseBoolean(map.get("carlson"));
+            gangIsAlive = !Boolean.parseBoolean(map.get("gang"));
+            gangName = map.get("gangName");
+            if (map.get("gangName") == "poisoned" && karlsonIsAlive == true)
+                isKnown = false;
+            else
+                isKnown = true;
+        }
+        catch (Exception e)
+        {
+
+        }
         this.animalAreas = new ArrayList<>();
         this.animalAreas.add(new Pond());
         this.animalAreas.add(new Glade());
@@ -215,7 +231,7 @@ public class World {
                     Scoop.strokeAnimal();
                     Scoop.kissAnimal();
                 }
-                if (Scoop.getIsArmed() && Math.random() < 0.9) {
+                if (Scoop.getIsArmed() && Math.random() < 0.4) {
                     System.out.println("Охранник замечает пистолет у Скуперфильда под пальто и решает вызвать полицию.");
                     guard.callThePolice();
                     if (pd.acceptRequest()) {
@@ -253,7 +269,7 @@ public class World {
             if (isKnown) {
                 System.out.println(gangName + ": Да, я еле оттуда ноги унёс.");
                 System.out.println("Скуперфильд: ... \"Отсрые пропеллеры\" будут мстить, война лишь усугубится...");
-                System.out.println("Входящее сообщение\n Получатель: Скуперфильд\n Отправитель Ярослав \"Малыш\" Абузов\n Завтра в 16:00 в детском саду Ромашка. Нам есть, что обсудить.");
+                System.out.println("Входящее сообщение\nПолучатель: Скуперфильд\nОтправитель Ярослав \"Малыш\" Абузов\nЗавтра в 16:00 в детском саду Ромашка. Нам есть, что обсудить.");
                 System.out.println("Скуперфильд: Хм...");
                 System.out.println("1.Принять предложение. \n2.Отказаться.");
                 Scanner in = new Scanner(System.in);
@@ -271,6 +287,8 @@ public class World {
             }
             System.out.println("Скуп уходит");
         }
+        else
+            System.out.println("Пока не реализовано.");
     }
     @Override
     public int hashCode () {
