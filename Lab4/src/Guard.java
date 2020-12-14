@@ -27,7 +27,7 @@ public class Guard extends Human {
     }
 
     public void callThePolice(){
-
+        System.out.println(this.name +": Полиция, здесь вооружённый человек! В зоопарке имени Незнайки. Приезжайте скорее!");
     }
     @Override
     public int hashCode () {

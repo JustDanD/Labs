@@ -1,6 +1,5 @@
-import sun.nio.cs.Surrogate;
-
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class World {
     ArrayList<AnimalArea> animalAreas;
@@ -10,6 +9,13 @@ public class World {
     private static int maxVisiters = 30;
     FSBGroup fsbGroup;
     boolean karlsonIsAlive = true;
+    boolean gangIsAlive = true;
+    boolean isKnown = true;
+    String gangName = "Афоня";
+    String killedBy = "";
+    Police pd = Police.createPD();
+    Jail jail = new Jail();
+
 
     public static class Plan {
         private int id;
@@ -53,7 +59,8 @@ public class World {
         Scoop = new IScoopFamily() {
             private String name = "Scooperfield";
             private AnimalArea curArea;
-            private boolean isArmed = Math.random() > 0.4 ? true : false, isProtected;
+            private boolean isArmed = true/*Math.random() > 0.4 ? true : false*/, isProtected;
+            private int balance = 30000;
             class Bread implements IBread {
                 private double size, cursize, instance;
 
@@ -104,6 +111,10 @@ public class World {
             @Override
             public void setCurArea( AnimalArea newArea) {
                 this.curArea = newArea;
+            }
+
+            public int getBalance() {
+                return balance;
             }
 
             @Override
@@ -158,6 +169,20 @@ public class World {
                 }
                 return false;
             }
+
+            public boolean bribe(InternalAffairs trg) {
+                System.out.println("Скуперфильд: Думаю мы могли бы дговориться.");
+                while (pd.getNerves() < 100) {
+                    int sum = UI.bribeUI(pd, Scoop);
+                    System.out.println("Скуперфильд: Как насчёт " + sum + "$?");
+                    if(pd.acceptBribe(sum)) {
+                        System.out.println("Полицейский: Хорошее предложение. Согласен.");
+                        return true;
+                    }
+                }
+                System.out.println("Нет, так не пойдёт!");
+                return false;
+            }
             public int hashCode () {
                 return this.bread.hashCode() + this.curArea.hashCode() + this.name.hashCode();
             }
@@ -183,16 +208,68 @@ public class World {
         int i = 0;
         System.out.println("*Скуперфильд приходит в зоопарк*");
         if (karlsonIsAlive) {
-            while(i < animalAreas.size()) {
-            Scoop.setCurArea(animalAreas.get(i));
-            Scoop.feedAnimals();
-            if (Scoop.askAccess()) {
-                Scoop.strokeAnimal();
-                Scoop.kissAnimal();
+            while (i < animalAreas.size()) {
+                Scoop.setCurArea(animalAreas.get(i));
+                Scoop.feedAnimals();
+                if (Scoop.askAccess()) {
+                    Scoop.strokeAnimal();
+                    Scoop.kissAnimal();
+                }
+                if (Scoop.getIsArmed() && Math.random() < 0.9) {
+                    System.out.println("Охранник замечает пистолет у Скуперфильда под пальто и решает вызвать полицию.");
+                    guard.callThePolice();
+                    if (pd.acceptRequest()) {
+                        pd.coming();
+                        System.out.println(guard.name + ":Да, офицер! У того мужчины пистолет!");
+                        if (pd.getIsScoopsPolice()) {
+                            System.out.println("Полицейский: У этого? Ты уверен? \n" + guard.name + ": Да! Точно он!\n" +
+                                   "Полицейский: Что ж... Ты совершил ошибку, а значит должен понести наказание...\n" +
+                                    guard.name + "в шоке сдаётся полиции");
+                            pd.arest(guard, jail);
+                        }
+                        else {
+                            System.out.println("Полицейский: Гражданин, стойте. *Обыскивает и находит пистолет.* Незаконное ношение оружия.");
+                            if (Scoop.bribe(pd)) {
+                                pd.leaving();
+                                System.out.println("Скуперфильд: Ты совершил большую ошибку...Надеюсь, ты отныне будешь думать, что делаешь! Вали отсюда.\n*"+guard.name+" уходит*");
+                            }
+                            else {
+                                pd.arest(Scoop, jail);
+                                System.out.println("Скуперфильд: Вы все ещё ответите за это!");
+                                System.out.println("Продолжение в следующей серии...");
+                                return;
+                            }
+                        }
+
+                    } else {
+                        System.out.println(guard.name +": Вот дьявол!");
+                    }
+                    break;
+                }
+                i++;
             }
-            i++;
-        }
-        System.out.println("*Скуперфильд  уходит*");
+            System.out.println("Звонит телефон Скуперфильда.\n" + gangName + ": Шеф, покушение не удалось. Цель жива...");
+            System.out.println("Скуперфильд: Чёрт! Они что-то заподозрили?");
+            if (isKnown) {
+                System.out.println(gangName + ": Да, я еле оттуда ноги унёс.");
+                System.out.println("Скуперфильд: ... \"Отсрые пропеллеры\" будут мстить, война лишь усугубится...");
+                System.out.println("Входящее сообщение\n Получатель: Скуперфильд\n Отправитель Ярослав \"Малыш\" Абузов\n Завтра в 16:00 в детском саду Ромашка. Нам есть, что обсудить.");
+                System.out.println("Скуперфильд: Хм...");
+                System.out.println("1.Принять предложение. \n2.Отказаться.");
+                Scanner in = new Scanner(System.in);
+                if (in.nextInt() == 1)
+                    System.out.println("Скуперфильд: Ну послушаем, что он скажет.");
+                else {
+                    System.out.println("Скуперфильд:" + gangName + ", пора закончить с пропеллерами навсегда. Возьми людей и уладь вопрос. И чтобы в этот раз в случае провала живым не возвращался.");
+                    System.out.println(gangName + ": Есть босс");
+                }
+            }
+            else {
+                System.out.println(gangName + ": Нет, никто ничего не знает .");
+                System.out.println("Скуперфильд: Что ж... Тогда мы должны уничтожить \"Отсрые пропеллеры\" раньше, чем они поймут, что случилось.");
+                System.out.println("Продолжение в следующей серии...");
+            }
+            System.out.println("Скуп уходит");
         }
     }
     @Override

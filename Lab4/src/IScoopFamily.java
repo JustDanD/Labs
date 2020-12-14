@@ -7,4 +7,6 @@ public interface IScoopFamily {
     public boolean getIsArmed();
     public boolean getIsProtected();
     public void  setIsProtected( boolean inst );
+    public int getBalance();
+    public boolean bribe(InternalAffairs trg);
 }
